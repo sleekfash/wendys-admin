@@ -1,20 +1,24 @@
-# Cake pricing, policies, and current booking month
+# Cake pricing, pastries collection, policies, and current booking month
 
 ## Goal
 
-Make Wendy’s Bakehouse cake-focused, rebuild the empty remixed catalogue with the supplied price guide, calculate custom-cake deposits correctly, and publish the complete ordering policies in clear customer-facing places.
+Rebuild the empty catalogue from the supplied price guide, make cakes the headline offering while keeping savoury items available under a new "Pastries" collection, calculate custom-cake deposits at 70%, and publish the full ordering policies where customers can read them.
 
-## 1. Restore a cake-focused catalogue
+## Current state (checked)
 
-- Repopulate the empty remixed backend with only the retained collections: custom cakes, cake loaves, cupcakes, and drinks.
-- Archive—not delete—the savoury range: meat and chicken pies, Scotch eggs, sausage rolls, samosa, spring rolls, and small chops. Hide their collection while preserving any historical order snapshots.
-- Remove savoury products as a selling point from the homepage, Cakes & treats, pricing, basket, contact, story, footer, page descriptions, and image copy.
-- Replace the homepage’s “both sides of the table” message with a cake-focused benefit: custom design choices with every price shown upfront.
-- Remove claims that contradict the new offering, including sculpted models and figures.
+The remixed backend is completely empty: no collections, products, options, delivery areas, saved settings, or past orders. So everything below is a fresh, clean setup — nothing historical is at risk.
+
+## 1. Rebuild the catalogue, with a Pastries collection
+
+- Create the collections: Custom cakes, Cake loaves, Cupcakes, Pastries, and Drinks.
+- Move the savoury range into **Pastries** and keep it live and orderable: meat and chicken pies, Scotch eggs, sausage rolls, samosa, spring rolls, small chops. Nothing is archived or hidden.
+- Add "Pastries" to the site navigation so customers can browse it directly, alongside Cakes & treats.
+- Order the collections so cakes lead and Pastries sits as a secondary line — cakes carry the marketing copy.
+- Rewrite homepage, Cakes & treats, pricing, basket, story, contact, footer and page descriptions so cakes are the selling point; pastries are presented as an extra rather than a headline.
+- Replace the homepage "both sides of the table" message with a cake benefit: custom design choices with every price shown upfront.
+- Remove claims that contradict the offering, including sculpted figures and models.
 
 ## 2. Correct cake and cupcake pricing
-
-Publish the supplied base-cake matrix exactly:
 
 | Size | 1 layer | 2 layers | 3 layers |
 |---|---:|---:|---:|
@@ -22,75 +26,72 @@ Publish the supplied base-cake matrix exactly:
 | 8 inch | $100 | $180 | $250 |
 | 10 inch | $150 | $250 | $320 |
 
-- Represent each size/layer combination with a stable choice and authoritative backend price so checkout cannot accept a browser-supplied amount.
-- Set cupcakes to 6 for $35, 12 for $60, and 20 for $110.
-- Keep cake loaves and drinks available at their existing published prices unless a supplied figure replaces them.
-- Explain tiered cakes as the sum of each tier’s base price plus the tiering fee, matching the guide.
+- Each size/layer combination becomes a stable choice priced in the backend, so checkout can never accept a price sent from the browser.
+- Cupcakes: 6 for $35, 12 for $60, 20 for $110.
+- Cake loaves, pastries and drinks get sensible published prices in their existing ranges.
+- Explain tiered cakes as each tier's base price plus the tiering fee.
 
-## 3. Add the complete add-on price list
-
-Add and display these cake extras:
+## 3. Complete add-on price list
 
 - Simple edible topper — $25
 - Custom edible topper — $50
 - Fondant covering — $100 per tier
 - Fondant letters or small detail — $10
 - Special colours — $20
-- Bows, cherries, edible glitter, pearls, or crowns — $5 each
+- Bows, cherries, edible glitter, pearls, crowns — $5 each
 - Detailed piping work — $10
 - Edible printed image — $20
-- Tiering fee — $40 for 2 tiers; $60 for 3+ tiers
+- Tiering fee — $40 for 2 tiers, $60 for 3+
 - Rush order under 48 hours — $20
-- Local Etobicoke delivery — $30
-- GTA delivery — $35
 
-Add a prominent note that fondant sculpted figures and models are not offered. Model independently combinable add-ons so customers can select more than one and every selected amount is included in the server-calculated order snapshot.
+Add-ons are independently combinable, so a customer can pick several and every selected amount lands in the saved order. Show a clear note that fondant sculpted figures and models are not offered.
 
-## 4. Enforce the 70% custom-cake deposit
+## 4. 70% custom-cake deposit
 
-- Replace fixed-dollar custom-cake deposits with a 70% rule calculated from the complete custom-cake line price, including selected paid add-ons.
-- Keep cupcakes, loaves, drinks, and other non-custom items payable in full.
-- Charge delivery in full alongside the amount due now.
-- Round to whole cents, store the percentage/payment rule in immutable order snapshots, and show total, due now, and remaining balance consistently in product selection, basket, checkout, Stripe, bank transfer, and admin order history.
-- Update the admin product editor so staff select “70% custom-cake deposit” rather than entering a contradictory fixed amount.
+- Custom cakes bill 70% of the full line price, including selected paid add-ons.
+- Cupcakes, loaves, pastries and drinks are payable in full.
+- Delivery is charged in full alongside the amount due now.
+- Total, due now, and remaining balance stay consistent across product selection, basket, checkout, card payment, bank transfer, and admin order history, and are saved with each order.
+- The admin product editor offers "70% deposit" instead of a fixed dollar amount that can contradict the price.
 
 ## 5. Publish the full policies
 
-Create a dedicated Policies page and link it from the footer. Also surface the key payment, notice, cancellation, pickup, and delivery terms during product selection and checkout:
+New Policies page linked from the footer, with the key terms also shown during product selection and checkout:
 
-- Minimum order: $130 buttercream; $280 fondant
-- Custom cakes require 2 weeks’ notice
-- Orders are confirmed only after a 70% deposit or full payment
-- Balance is due before pickup or delivery
-- All payments are non-refundable
-- Pickup is in Etobicoke
-- Delivery is $30 within Etobicoke and $35 elsewhere within the GTA
-- Pickup/delivery time changes require 12 hours’ notice
-- Size, design, flavour, or add-on changes require 1 week’s notice before the event
+- Minimum order: $130 buttercream, $280 fondant
+- Custom cakes need 2 weeks' notice
+- Orders confirmed only after a 70% deposit or full payment
+- Balance due before pickup or delivery
+- All payments non-refundable
+- Pickup in Etobicoke
+- Delivery $30 within Etobicoke, $35 elsewhere in the GTA
+- Pickup/delivery time changes need 12 hours' notice
+- Size, design, flavour or add-on changes need 1 week's notice before the event
 
-Require customers to acknowledge the policies before placing an order or starting card payment. Keep the policy text visible rather than hiding it behind “available on request.”
+Customers acknowledge the policies before placing an order or starting card payment. The text stays visible, not "available on request".
 
-## 6. Prevent the booking banner from going stale
+## 6. Booking month stops going stale
 
-Replace the hard-coded August value with the current month generated in the Toronto time zone. Use the same source everywhere “Now booking” appears, including the top banner, homepage, and contact page.
+Generate "Now booking [month]" from the current date in Toronto time, from one shared source used by the top banner, homepage and contact page.
 
-## 7. Data and delivery consistency
+## 7. Delivery and settings
 
-- Configure fixed delivery areas for Etobicoke ($30) and the wider GTA ($35), replacing the incomplete distance configuration currently stored in the seed.
-- Update both the live remixed backend and the reusable deployment seed so future remixes receive identical prices, products, options, policies, and delivery fees.
-- Preserve existing historical orders and their saved product and financial snapshots.
+- Set fixed delivery areas: Etobicoke $30, wider GTA $35.
+- Save the bank details and WhatsApp number so transfer instructions and chat links work.
+- Update the reusable deployment seed to match, so a future copy of the site starts with the same collections, prices, options, policies and delivery fees.
 
 ## 8. Verification
 
-- Check desktop and mobile views for homepage, Cakes & treats, product details, pricing, policies, basket, checkout, and admin products/settings/orders.
-- Verify every listed price and add-on against the supplied guide.
-- Test a custom-cake order with multiple add-ons and delivery, confirming the 70% cake deposit, full delivery charge, balance, Stripe/bank-transfer amount, and admin snapshot all agree.
-- Confirm savoury items cannot be browsed or newly ordered, while old order history remains readable.
-- Confirm current-month text is consistent and no “August,” “DM for price,” “quoted,” meat/poultry selling copy, or sculpted-model offer remains customer-facing.
+- Check desktop and mobile for homepage, Cakes & treats, Pastries, product details, pricing, policies, basket, checkout, and admin products/settings/orders.
+- Verify every price and add-on against the supplied guide.
+- Place a test custom-cake order with several add-ons and delivery, confirming the 70% deposit, full delivery charge, balance, payment amount and admin record all agree.
+- Confirm pastries browse and order correctly under their own collection.
+- Confirm no "August", "DM for price", quote-era wording, or sculpted-model offer remains visible.
 
 ## Technical notes
 
-- A schema update will replace fixed `deposit_cents` behavior with a percentage-capable payment rule while retaining legacy fields for old order compatibility.
-- The existing one-choice-per-group model will be extended for independently combinable add-ons, with stable identifiers and server-side validation.
-- Catalogue and configuration changes will be applied as data updates/upserts; no historical orders will be deleted or rewritten.
-- The uploaded price-guide image is a content reference only; its prices and rules will be implemented as accessible site content rather than embedding the flyer itself.
+- Payment rule becomes percentage-capable (70%) while legacy fixed-deposit fields stay for compatibility.
+- Option groups gain multi-select support for add-ons, with stable keys and server-side validation of every selection and price.
+- Catalogue and settings are applied as data inserts/upserts plus a small schema migration; order snapshots stay immutable.
+- The uploaded price-guide image is a content reference only — its prices and rules become accessible page content rather than an embedded flyer.
+- New and edited UI reuses the existing shadcn components, design tokens, hover/focus/active states, skeleton loaders and empty states already used across the site.
