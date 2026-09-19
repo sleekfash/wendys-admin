@@ -1,7 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useQuery } from "@tanstack/react-query";
 import { ShieldCheck, MapPin, Clock, Sparkles } from "lucide-react";
-import heroArtwork from "@/assets/brand/wendys-billboard.jpeg.asset.json";
+import heroArtwork from "@/assets/hero-cake.jpg";
 import reviewArtwork from "@/assets/customer-review.png.asset.json";
 import { BUSINESS } from "@/data/catalog";
 import {
@@ -53,8 +53,8 @@ function Index() {
           <div className="relative md:order-2 md:col-span-6">
             <div className="absolute -inset-2 rounded-[1.65rem] border border-gold/35 bg-cocoa-blush/15 blur-sm" aria-hidden="true" />
             <img
-              src={heroArtwork.url}
-              alt="Wendy's Bakehouse custom cakes billboard featuring a pink leopard-print celebration cake"
+              src={heroArtwork}
+              alt="Wendy's Bakehouse custom celebration cake"
               className="relative aspect-[5/4] w-full rounded-[1.35rem] border border-gold/45 object-cover shadow-2xl"
             />
           </div>
